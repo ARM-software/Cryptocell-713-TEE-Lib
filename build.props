@@ -1,0 +1,7 @@
+PROJ_NAME = cc713tee
+PROJ_VER = 1.0.0
+BUILD_MACHINE = Linux 4.15.0-74-generic x86_64
+BUILD_TIME = Mon Apr 6 17:36:19 UTC 2020
+TARGET_HOST_ARCH = arm64
+GIT_BRANCH = HEAD detached at cc713-rel-full-rc3
+GIT_REV = b1c9d07

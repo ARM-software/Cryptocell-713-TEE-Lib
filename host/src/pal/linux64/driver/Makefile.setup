@@ -1,0 +1,100 @@
+# Makefile for ARM cc7xree Linux device driver
+
+MODULE_NAME = cc_linux_drv
+
+ifeq ($(KERNEL_DIR),)
+$(error KERNEL_DIR is undefined. Set KERNEL_DIR environment to kernel source tree path)
+endif
+
+PWD := $(shell pwd)
+export HOST_PROJ_ROOT ?= $(PWD)/../../../..
+include $(HOST_PROJ_ROOT)/Makefile.defs
+
+export CONFIG_CRYPTO_PAL_LINUX_DRV = m
+
+
+KERNEL_VER := $(shell cat $(KERNEL_DIR)/include/config/kernel.release)
+RELEASE_MODULES_DIR = $(RELEASE_LIBDIR)/modules/$(KERNEL_VER)
+$(RELEASE_MODULES_DIR) $(RELEASE_INCDIR):
+	mkdir -p $@
+KERNEL_CONFIG_DEV_NAME = "CONFIG_CRYPTO_DEV_$(shell $(ECHO) $(MODULE_NAME) | tr a-z A-Z)"
+KERNEL_TARGET_DIR = $(KERNEL_DIR)/drivers/crypto/
+KERNEL_CRYPTO_KCONFIG = \
+	config CRYPTO_DEV_$(shell $(ECHO) $(MODULE_NAME) | tr a-z A-Z)\n \
+	\tdefault y\n \
+	\ttristate \"Support for ARM CryptoCell crypto $(MODULE_NAME) \"\n \
+	\thelp\n \
+	\t  This option allows you to have support for ARM CryptoCell $(MODULE_NAME)\n \
+	\t  acceleration. \
+	\nendif
+
+default: $(RELEASE_MODULES_DIR)/$(MODULE_NAME).ko
+
+builtin_install:
+	@$(ECHO) Installing driver statically for kernel version $(KERNEL_VER) for $(ARCH)
+	@$(MKDIR) $(KERNEL_TARGET_DIR)/$(MODULE_NAME)
+	@cp -L *.[ch] $(KERNEL_TARGET_DIR)/$(MODULE_NAME)/
+	@cp -L Makefile $(KERNEL_TARGET_DIR)/$(MODULE_NAME)/
+	@if [ ! -f $(KERNEL_TARGET_DIR)/Makefile.dxbackup ]; then \
+		$(CP) $(KERNEL_TARGET_DIR)/Makefile $(KERNEL_TARGET_DIR)/Makefile.dxbackup; \
+		$(ECHO) "obj-\$$($(KERNEL_CONFIG_DEV_NAME)) += $(MODULE_NAME)/" >> $(KERNEL_TARGET_DIR)/Makefile; \
+	fi
+	@if [ ! -f $(KERNEL_TARGET_DIR)/Kconfig.dxbackup ]; then \
+		sed -i.dxbackup 's/endif # CRYPTO_HW/$(KERNEL_CRYPTO_KCONFIG)/' $(KERNEL_TARGET_DIR)/Kconfig; \
+	fi
+	@$(ECHO) You MUST configure your kernel built-in mode now.
+
+builtin_clean:
+	@$(ECHO) [CLN-BUILTIN]
+	@$(RM) -rf  $(KERNEL_TARGET_DIR)/$(MODULE_NAME)
+	@if [ -f $(KERNEL_TARGET_DIR)/Makefile.dxbackup ]; then \
+		$(ECHO) Restoring Makefile from Makefile.dxbackup at $(KERNEL_TARGET_DIR); \
+		mv $(KERNEL_TARGET_DIR)/Makefile.dxbackup $(KERNEL_TARGET_DIR)/Makefile; \
+	fi
+	@if [ -f $(KERNEL_TARGET_DIR)/Kconfig.dxbackup ]; then \
+		$(ECHO) Restoring Kconfig from Kconfig.dxbackup at $(KERNEL_TARGET_DIR); \
+		mv $(KERNEL_TARGET_DIR)/Kconfig.dxbackup $(KERNEL_TARGET_DIR)/Kconfig; \
+	fi
+	@if [ -f $(KERNEL_DIR)/.config ]; then \
+		sed -i.dxtmp '/$(KERNEL_CONFIG_DEV_NAME)=/ d' $(KERNEL_DIR)/.config; \
+		$(MAKE) -C $(KERNEL_DIR) oldconfig; \
+	fi
+	@$(ECHO) You MUST re-make your kernel in order to clear cc7xree symbol.
+
+$(RELEASE_MODULES_DIR)/$(MODULE_NAME).ko: $(MODULE_NAME).ko $(call DEPENDENCY_ON_EXISTENCE_OF,$(RELEASE_MODULES_DIR))
+	@$(ECHO) [CP] $< --\> $(RELEASE_MODULES_DIR)
+	@$(CP) $< $@
+
+HW_INC_PATH = $(SHARED_DIR)/$(CC_TEE_HW_INC_DIR)
+HW_INC_H_FILES = $(foreach h,$(wildcard $(HW_INC_PATH)/*.h),$(if $(findstring reg_base,$(notdir $h)),$(notdir $h),))
+
+# Use kernel build system to build the module
+MODULE_C_FILES = cc_pal_linux_drv.c
+MODULE_H_FILES = cc_pal_linux_drv.h
+MODULE_SYMLINK_H_FILES = cc_pal_types.h cc_pal_dma_defs.h cc_pal_types_plat.h cc_general_defs.h cc_address_defs.h cc_pal_dma.h cc_pal_dma_plat.h
+MODULE_SYMLINK_H_FILES += $(HW_INC_H_FILES)
+
+$(MODULE_NAME).ko: $(MODULE_C_FILES) $(MODULE_SYMLINK_H_FILES) $(MODULE_H_FILES) FORCE
+	@$(ECHO) "Building $(MODULE_NAME) module for kernel version: $(KERNEL_VER) ($(ARCH))"
+	@$(MAKE) -C $(KERNEL_DIR) M=$(PWD) $(if $(V),V=$(V)) modules
+
+cc_pal_types.h cc_pal_dma_defs.h cc_pal_dma.h:
+	$(SYMLINK) $(SHARED_INCDIR)/pal/$@
+
+cc_pal_types_plat.h cc_pal_dma_plat.h:
+	$(SYMLINK) $(SHARED_INCDIR)/pal/linux64/$@
+
+cc_general_defs.h cc_address_defs.h:
+	$(SYMLINK) $(SHARED_INCDIR)/proj/$(PROJ_PRD)/$@
+
+$(HW_INC_H_FILES):
+	$(SYMLINK) $(HW_INC_PATH)/$@
+
+cc_regs.h cc_bitops.h cc_crypto_ctx.h cc_lli_defs.h:
+
+
+clean:
+	@$(MAKE) -C $(KERNEL_DIR) M=$(PWD) $(if $(V),V=$(V)) clean
+	@find . -type l -exec rm \{\} \;
+
+.PHONY: FORCE
