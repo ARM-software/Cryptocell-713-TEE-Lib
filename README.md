@@ -1,1 +1,1 @@
-# -Cryptocell-713-TEE-Lib
+# Cryptocell-713-TEE-Lib
