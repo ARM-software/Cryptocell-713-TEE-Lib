@@ -1,0 +1,56 @@
+var group__cc__sm2 =
+[
+    [ "CCSm2FipsKatContext_t", "struct_c_c_sm2_fips_kat_context__t.html", [
+      [ "f_rng", "struct_c_c_sm2_fips_kat_context__t.html#a4d08796e53078ba1db85d78901a7da9e", null ],
+      [ "p_rng", "struct_c_c_sm2_fips_kat_context__t.html#aa1b7b01d3e7ecc26a043e2fb731ab8ef", null ],
+      [ "workBuff", "struct_c_c_sm2_fips_kat_context__t.html#a202bd9d588fed2bdbb1374cfb87b1d53", null ]
+    ] ],
+    [ "CCSm2KeyGenCHCertContext_t", "struct_c_c_sm2_key_gen_c_h_cert_context__t.html", [
+      [ "workBuff", "struct_c_c_sm2_key_gen_c_h_cert_context__t.html#a4ed17f8786495de3e8bd5d0c87320874", null ]
+    ] ],
+    [ "CC_Sm2KeContext_t", "struct_c_c___sm2_ke_context__t.html", [
+      [ "conf_value", "struct_c_c___sm2_ke_context__t.html#a1526adeef60a06ec5472e906d1c53684", null ],
+      [ "conf_value_size", "struct_c_c___sm2_ke_context__t.html#a0b2c03b334ec2f472a85922bb3c4662d", null ],
+      [ "confirmation", "struct_c_c___sm2_ke_context__t.html#a5aba06b2042e6085f94c1239573c3dde", null ],
+      [ "eph_pub_key_size", "struct_c_c___sm2_ke_context__t.html#a18aea06ee17501c24031f79e2eac638c", null ],
+      [ "ephemeral_pub", "struct_c_c___sm2_ke_context__t.html#ab893da0be73ee5ddfd6271bb7553d60c", null ],
+      [ "idlen", "struct_c_c___sm2_ke_context__t.html#aa616146356a4f6ca79a9871e5d6f21fc", null ],
+      [ "isInitiator", "struct_c_c___sm2_ke_context__t.html#a16ab4f3e29accd8c25bbafabb7d4da44", null ],
+      [ "pId", "struct_c_c___sm2_ke_context__t.html#ad5964044e6a675a7786e4c7adbeb328e", null ],
+      [ "pRemoteId", "struct_c_c___sm2_ke_context__t.html#ab58fead406fc24ca97db3cd83ba009e0", null ],
+      [ "privKey", "struct_c_c___sm2_ke_context__t.html#a20cdd898308aaf2e1827d1e1dcbe170a", null ],
+      [ "pubKey", "struct_c_c___sm2_ke_context__t.html#af990b25c585e2eaa3c8130783e80574d", null ],
+      [ "remote_eph_pub_key_size", "struct_c_c___sm2_ke_context__t.html#aecd8e5f9404bf91016b1729aa98a0fb6", null ],
+      [ "remote_ephemeral_pub", "struct_c_c___sm2_ke_context__t.html#ae3d2f9985cb16962c6542c0a4add4fba", null ],
+      [ "remoteIdLen", "struct_c_c___sm2_ke_context__t.html#a9a1284ac9e95ef8acac287a56235db96", null ],
+      [ "remotePubKey", "struct_c_c___sm2_ke_context__t.html#a0447b5800fd9cebfdea2aed144aeef4e", null ],
+      [ "t", "struct_c_c___sm2_ke_context__t.html#a24800a1689f3c22245131a9d99daed68", null ],
+      [ "V", "struct_c_c___sm2_ke_context__t.html#ae38683fc15481502d82a8cfa7854d80b", null ],
+      [ "Z", "struct_c_c___sm2_ke_context__t.html#ade43337ea1bd69af7ab071665bcb22da", null ],
+      [ "Z_remote", "struct_c_c___sm2_ke_context__t.html#a91574b9d4904527f841e0bec27d7c043", null ],
+      [ "Z_value_size", "struct_c_c___sm2_ke_context__t.html#a821c1e0f8a37bc6ac705957131c4ff19", null ]
+    ] ],
+    [ "CC_SM2_CONF_VALUE_LENGTH_IN_BYTES", "group__cc__sm2.html#gaa65ec4e9ec50f078988bb25618ac72c6", null ],
+    [ "CC_SM2_MAX_ID_LEN_IN_BITS", "group__cc__sm2.html#gaa0d8411faec6eed12029cf83073b9c10", null ],
+    [ "CC_SM2_MAX_ID_LEN_IN_BYTES", "group__cc__sm2.html#ga515d781d1aab1b849522b64e5db53097", null ],
+    [ "CC_SM2_MAX_MESSEGE_LEN", "group__cc__sm2.html#ga5e9ca2c8169c3a5e8d4d99bbce582ab0", null ],
+    [ "CC_SM2_MODULE_LENGTH_IN_BYTES", "group__cc__sm2.html#ga4166865c16c359f54b09656e68b37a9a", null ],
+    [ "CC_SM2_MODULE_LENGTH_IN_WORDS", "group__cc__sm2.html#gab3b89cc880ddb1108033b948b78eb874", null ],
+    [ "CC_SM2_ORDER_LENGTH_IN_BYTES", "group__cc__sm2.html#ga051c96982c951a2464ed3421008dc164", null ],
+    [ "CC_SM2_ORDER_LENGTH_IN_WORDS", "group__cc__sm2.html#ga283f896da7b8bcb2904407b0099adbec", null ],
+    [ "CC_SM2_SIGNATURE_LENGTH_IN_BYTES", "group__cc__sm2.html#ga6278194e37d9a0211bf8d8a7d75ca415", null ],
+    [ "CERT_SM2_DEFAULT_INPUT_AND_ID_SIZE", "group__cc__sm2.html#gaab677e6515d73cfa91829a0f9e6cb1b6", null ],
+    [ "CC_Sm2KeContext_t", "group__cc__sm2.html#ga5a55c326ac930585cf130123459ae2da", null ],
+    [ "CCSm2FipsKatContext_t", "group__cc__sm2.html#ga3b0668f4aeff05116ecb861d431357c7", null ],
+    [ "CCSm2KeyGenCHCertContext_t", "group__cc__sm2.html#gaec897876d0589c98f5c7acd0246b7e04", null ],
+    [ "CC_EcpkiGetSm2Domain", "group__cc__sm2.html#gad0f2dce99938ca0f891571e562427fce", null ],
+    [ "CC_Sm2CalculateECPoint", "group__cc__sm2.html#ga1ff7b93734679960b964f5e0b417a60f", null ],
+    [ "CC_Sm2CalculateSharedSecret", "group__cc__sm2.html#gaf390e6fa25d09027d334d6446dc7e656", null ],
+    [ "CC_Sm2ComputeMessageDigest", "group__cc__sm2.html#gaf9d1afd26547c26c0ee20e63bd391725", null ],
+    [ "CC_Sm2Confirmation", "group__cc__sm2.html#ga91c3365ca3712ced890e56e028afbbf4", null ],
+    [ "CC_Sm2Kdf", "group__cc__sm2.html#ga26830d153266567608830d1d49130032", null ],
+    [ "CC_Sm2KeyExchangeContext_cleanup", "group__cc__sm2.html#ga5a1f836c9092ba8bbb620344a5056621", null ],
+    [ "CC_Sm2KeyExchangeContext_init", "group__cc__sm2.html#ga31b8f636f9aff25fec55e54ee2f1302a", null ],
+    [ "CC_Sm2Sign", "group__cc__sm2.html#ga0909eb2d95ccff2185d07fa533132fd0", null ],
+    [ "CC_Sm2Verify", "group__cc__sm2.html#ga1b9c3646454011246848d013adfb8b53", null ]
+];

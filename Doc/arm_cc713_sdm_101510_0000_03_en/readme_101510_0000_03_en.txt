@@ -1,0 +1,12 @@
+﻿Arm® CryptoCell™-713 r0p0 Software Developers Manual, 101510_0000_03_en.
+Copyright © 2019-2020 Arm Limited or its affiliates. All rights reserved.
+
+The arm_cc713_sdm_101510_0000_03_en.zip file contains:
+ • readme_101510_0000_03_en.txt - this file
+ • The following component documentation folders:
+   • Runtime_API_Layer - contains the Runtime API SDM
+   • Boot_Services_API_Layer - contains the Boot services API SDM
+   • Runtime_Integration_Tests_API_Layer - contains the Runtime integration tests API SDM
+   • Boot_Services_Integration_Tests_API_Layer - contains the Boot services integration tests API SDM
+
+After unpacking, navigate to the desired component folder and launch the index.html file in a browser to view the documentation.

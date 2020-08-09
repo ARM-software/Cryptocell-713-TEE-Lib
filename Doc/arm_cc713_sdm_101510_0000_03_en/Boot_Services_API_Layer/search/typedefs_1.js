@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['cc_5fpaldmabufferhandle',['CC_PalDmaBufferHandle',['../group__cc__pal__dma__defs.html#ga596360eac5b06d1906cd6d133a4818e7',1,'cc_pal_dma_defs.h']]],
+  ['ccaddr_5ft',['CCAddr_t',['../group__cc__sb.html#ga3e86795ddd83ad11ab67e9ecd0a9a387',1,'cc_address_defs.h']]],
+  ['ccbool_5ft',['CCBool_t',['../group__cc__pal__types.html#ga6dcfa1fccae81f1dcfefe3229df69b6c',1,'cc_pal_types_plat.h']]],
+  ['ccbsvaesiv_5ft',['CCBsvAesIv_t',['../group__cc__bsv__crypto__defs.html#gaf907b6450735d74b944d14e8e22bba93',1,'bsv_crypto_defs.h']]],
+  ['ccbsvccmkey_5ft',['CCBsvCcmKey_t',['../group__cc__bsv__crypto__defs.html#gaad8cbf1d876c217d87b3c3d0d99128fa',1,'bsv_crypto_defs.h']]],
+  ['ccbsvccmmacres_5ft',['CCBsvCcmMacRes_t',['../group__cc__bsv__crypto__defs.html#gadce57b130d59860f897153bd705912c1',1,'bsv_crypto_defs.h']]],
+  ['ccbsvccmnonce_5ft',['CCBsvCcmNonce_t',['../group__cc__bsv__crypto__defs.html#gaa2213c5c071bad06cca2e1ce379714f4',1,'bsv_crypto_defs.h']]],
+  ['ccbsvcmacresult_5ft',['CCBsvCmacResult_t',['../group__cc__bsv__crypto__defs.html#ga59fcf43727bf5bb5267b1b20a67c5994',1,'bsv_crypto_defs.h']]],
+  ['ccbsvnbuff_5ft',['CCBsvNBuff_t',['../group__cc__bsv__crypto__asym__api.html#gac4b69c7a85b2ff2ea2cb57e7537dfbcd',1,'bsv_crypto_asym_api.h']]],
+  ['ccbsvnpbuff_5ft',['CCBsvNpBuff_t',['../group__cc__bsv__crypto__asym__api.html#gabea97abb9c24d697694d2c4ae49f9616',1,'bsv_crypto_asym_api.h']]],
+  ['ccbsvsignature_5ft',['CCBsvSignature_t',['../group__cc__bsv__crypto__asym__api.html#ga09c6898da1bf6ca8ea8f9a52f4ca2667',1,'bsv_crypto_asym_api.h']]],
+  ['ccdmaaddr_5ft',['CCDmaAddr_t',['../group__cc__sb.html#ga1a300f5fa6016e0a39afe340bcc2ba7c',1,'cc_address_defs.h']]],
+  ['cchashresult_5ft',['CCHashResult_t',['../group__cc__sb.html#gac629687506e9732b1bb4a27417402f1c',1,'cc_sec_defs.h']]],
+  ['ccsbcertpubkeyhash_5ft',['CCSbCertPubKeyHash_t',['../group__cc__sb__defs.html#ga401d6472dda1d5e52db656c18f75b3aa',1,'secureboot_defs.h']]],
+  ['ccsbcertsocid_5ft',['CCSbCertSocId_t',['../group__cc__sb__defs.html#ga5889562f29450dadff26bd0e367e450f',1,'secureboot_defs.h']]],
+  ['ccsbflashreadfunc',['CCSbFlashReadFunc',['../group__cc__sb__defs.html#gae7a26d40edf1d354182140692154fba3',1,'secureboot_defs.h']]],
+  ['ccsbnonce_5ft',['CCSbNonce_t',['../group__cc__sb.html#gabfd73d6fc8debb7816cb48e244a7c609',1,'cc_crypto_boot_defs.h']]],
+  ['ccsbuseradddata_5ft',['CCSbUserAddData_t',['../group__cc__sb__image__verifier.html#ga48b539bf54ef867b3177866a647bc84a',1,'bootimagesverifier_def.h']]],
+  ['ccsramaddr_5ft',['CCSramAddr_t',['../group__cc__sb.html#gaf859b880e99070f5e11c3f03d6d975f6',1,'cc_address_defs.h']]],
+  ['ccstatus',['CCStatus',['../group__cc__pal__types.html#ga417cd8fd4da9f104f2761043c6f3ba7f',1,'cc_pal_types_plat.h']]],
+  ['ccvirtaddr_5ft',['CCVirtAddr_t',['../group__cc__pal__types.html#gab50e06181089c37ded53792a5accd255',1,'cc_pal_types_plat.h']]]
+];
